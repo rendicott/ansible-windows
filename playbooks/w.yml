@@ -1,0 +1,8 @@
+- name: talk to windows
+  hosts: "{{ machineName }}"
+  connection: smart
+  gather_facts: false
+  vars_files:
+    - ../group_vars/windows.yml
+  tasks:
+    - raw: ipconfig /all
